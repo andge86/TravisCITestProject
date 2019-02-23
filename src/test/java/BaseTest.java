@@ -10,6 +10,10 @@ public class BaseTest {
     @BeforeClass
     public void browserInit() {
 
+        // Optional, if not specified, WebDriver will search your path for chromedriver.
+        System.setProperty("webdriver.chrome.driver", "chromedriver");
+
+
         driver = new ChromeDriver();
 
 
