@@ -1,2 +1,4 @@
 os: osx
 language: java
+addons:
+  chrome: stable
