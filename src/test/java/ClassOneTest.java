@@ -2,6 +2,8 @@ import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.util.Map;
+
 public class ClassOneTest extends BaseTest {
 
 
@@ -30,6 +32,25 @@ public class ClassOneTest extends BaseTest {
         Thread.sleep(1500);
         System.out.println(driver.getTitle());
 
+    }
+
+    @Test
+    public void passingTestEnvironmentVariables() {
+
+        System.out.println("Hello Test Environment Variables!!!");
+        System.out.println("Take one variable:");
+        System.out.println(System.getenv("INSTAGRAM_LOGINS"));
+        String likeLogins = System.getenv("LIKE_LOGINS");
+        System.out.println(likeLogins);
+
+        Map<String, String> map = System.getenv();
+
+        System.out.println("Map of Environment Variables: ");
+
+        map.entrySet().forEach(entry -> System.out.println(entry.getKey() + " " + entry.getKey()));
+
+
+        Assert.assertEquals(1, 1);
     }
 
 }
