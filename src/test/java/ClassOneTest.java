@@ -49,8 +49,10 @@ public class ClassOneTest extends BaseTest {
 
         map.entrySet().forEach(entry -> System.out.println(entry.getKey() + " " + entry.getKey()));
 
+        System.out.println(System.getenv("TRY1"));
+        System.out.println(System.getenv("TRY2"));
 
-        Assert.assertEquals(1, 1);
+        Assert.assertEquals(likeLogins, "123;456;789");
     }
 
 }
