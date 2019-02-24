@@ -23,7 +23,11 @@ public class ClassOneTest extends BaseTest {
 
         driver.get("https://www.seleniumhq.org/");
         Thread.sleep(1500);
+        System.out.println(driver.getTitle());
         Assert.assertEquals(driver.getTitle(), "Selenium - Web Browser Automation");
+        driver.findElement(By.xpath("//a[@title = 'Get Selenium']")).click();
+        Thread.sleep(1500);
+        System.out.println(driver.getTitle());
 
     }
 
