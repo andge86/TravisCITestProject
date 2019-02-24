@@ -41,11 +41,11 @@ public class ClassOneTest extends BaseTest {
         String likeLogins = System.getenv("LIKE_LOGINS");
         System.out.println(likeLogins);
 
-        Map<String, String> map = System.getenv();
+     //   Map<String, String> map = System.getenv();
 
-        System.out.println("Map of Environment Variables: ");
+     //   System.out.println("Map of Environment Variables: ");
      //   System.out.println(map);
-        map.entrySet().forEach(entry -> System.out.println(entry.getKey() + " " + entry.getKey()));
+     //   map.entrySet().forEach(entry -> System.out.println(entry.getKey() + " " + entry.getKey()));
 
         System.out.println(System.getenv("TRY1"));
         System.out.println(System.getenv("TRY2"));
