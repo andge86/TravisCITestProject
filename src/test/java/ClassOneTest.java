@@ -35,7 +35,7 @@ public class ClassOneTest extends BaseTest {
     }
 
     @Test
-    public void passingTestEnvironmentVariables() {
+    public void passingTestEnvironmentVariablesTest() {
 
         System.out.println("Hello Test Environment Variables!!!");
         System.out.println("Take one variable:");
