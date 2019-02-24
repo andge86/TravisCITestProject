@@ -7,12 +7,6 @@ import java.util.Map;
 public class ClassOneTest extends BaseTest {
 
 
-    @Test
-    public void passingTest1() {
-
-        System.out.println("Hello Test1!!!");
-        Assert.assertEquals(1, 1);
-    }
 
     @Test
     public void passingTest2() {
@@ -46,8 +40,8 @@ public class ClassOneTest extends BaseTest {
         Map<String, String> map = System.getenv();
 
         System.out.println("Map of Environment Variables: ");
-
-        map.entrySet().forEach(entry -> System.out.println(entry.getKey() + " " + entry.getKey()));
+        System.out.println(map);
+     //   map.entrySet().forEach(entry -> System.out.println(entry.getKey() + " " + entry.getKey()));
 
         System.out.println(System.getenv("TRY1"));
         System.out.println(System.getenv("TRY2"));
