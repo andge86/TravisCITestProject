@@ -11,7 +11,7 @@ public class BaseTest {
     public void browserInit() {
 
         // Optional, if not specified, WebDriver will search your path for chromedriver.
-      //  System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
 
 
         driver = new ChromeDriver();
