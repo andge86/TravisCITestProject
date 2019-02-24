@@ -7,7 +7,12 @@ import java.util.Map;
 
 public class ClassOneTest extends BaseTest {
 
+    @Test
+    public void passingTest8() {
 
+        System.out.println("Hello Test8!!!");
+        Assert.assertEquals(8, 8);
+    }
 
     @Test
     public void passingTest2() {
