@@ -1,5 +1,6 @@
 import org.openqa.selenium.By;
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import java.util.Map;
@@ -28,8 +29,11 @@ public class ClassOneTest extends BaseTest {
 
     }
 
-    @Test
-    public void passingTestEnvironmentVariablesTest() {
+    @Test (dataProvider = "variables")
+    public void passingTestEnvironmentVariablesTest(String value1, String value2) {
+
+        System.out.println("Variables from dataprovider: ");
+        System.out.println(value1 + " " + value2);
 
         System.out.println("Hello Test Environment Variables!!!");
         System.out.println("Take one variable:");
@@ -40,13 +44,27 @@ public class ClassOneTest extends BaseTest {
         Map<String, String> map = System.getenv();
 
         System.out.println("Map of Environment Variables: ");
-        System.out.println(map);
-     //   map.entrySet().forEach(entry -> System.out.println(entry.getKey() + " " + entry.getKey()));
+     //   System.out.println(map);
+        map.entrySet().forEach(entry -> System.out.println(entry.getKey() + " " + entry.getKey()));
 
         System.out.println(System.getenv("TRY1"));
         System.out.println(System.getenv("TRY2"));
 
-        Assert.assertEquals(likeLogins, "123,456,78910");
+
+        driver.get("https://www.google.com/");
+
+
+        Assert.assertEquals(likeLogins, "123,456,789");
+    }
+
+    @DataProvider(name = "variables")
+    public Object[][] variablesData(){
+
+       return new Object[][] {
+
+               {System.getenv("TRY1"), System.getenv("TRY2")},
+               {System.getenv("LIKE_LOGINS").split(",")[0], System.getenv("LIKE_LOGINS").split(",")[1]}
+       };
     }
 
 }
